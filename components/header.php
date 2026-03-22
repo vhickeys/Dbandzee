@@ -1,5 +1,5 @@
 <?php
-$servicesList = $service->getServices();
+    $servicesList = $service->getServices();
 ?>
 
 <!-- header -->
@@ -9,50 +9,55 @@ $servicesList = $service->getServices();
 
             <!-- LOGO -->
             <a class="navbar-brand ps-2" href="index.php">
-                <img src="assets/images/settings/<?= $display_settings['logo'] ?? 'logo.png' ?>" 
-                     alt="D'bandzee Ltd" class="logo-default" />
-                <img src="assets/images/settings/<?= $display_settings['logo'] ?? 'logo.png' ?>" 
-                     alt="D'bandzee Ltd" class="logo-scrolled" />
+                <img src="assets/images/settings/<?php echo $display_settings['logo'] ?? 'logo.png' ?>"
+                    alt="D'bandzee Ltd" class="logo-default" />
+                <img src="assets/images/settings/<?php echo $display_settings['logo'] ?? 'logo.png' ?>"
+                    alt="D'bandzee Ltd" class="logo-scrolled" />
             </a>
 
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
 
+                    <!-- HOME -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Home</a>
+                        <a class="nav-link <?php echo setActivePage(['index.php']) ?>" href="index.php">Home</a>
                     </li>
 
+                    <!-- ABOUT -->
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
+                        <a class="nav-link <?php echo setActivePage(['about.php']) ?>" href="about.php">About</a>
                     </li>
 
-                    <!-- SERVICES DROPDOWN (DYNAMIC) -->
+                    <!-- SERVICES -->
                     <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle" href="services.php" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle <?php echo setActivePage(['services.php', 'service-details.php']) ?>"
+                           href="services.php" data-bs-toggle="dropdown">
                             Services
                         </a>
 
                         <div class="dropdown-menu">
                             <?php
-                            if (!empty($servicesList)) {
-                                foreach ($servicesList as $srv) {
-                                    if ($srv['status'] == 'active') {
-                            ?>
-                                        <a class="dropdown-item" href="service-details.php?slug=<?= $srv['slug'] ?>">
-                                            <?= $srv['service_name'] ?>
+                                if (! empty($servicesList)) {
+                                    foreach ($servicesList as $srv) {
+                                        if ($srv['status'] == 'active') {
+                                        ?>
+                                        <a class="dropdown-item"
+                                           href="service-details.php?slug=<?php echo $srv['slug'] ?>">
+                                            <?php echo $srv['service_name'] ?>
                                         </a>
                             <?php
-                                    }
                                 }
-                            } else {
-                                echo '<a class="dropdown-item" href="#">No services available</a>';
-                            }
+                                    }
+                                } else {
+                                    echo '<a class="dropdown-item" href="#">No services available</a>';
+                                }
                             ?>
                         </div>
                     </li>
 
+                    <!-- CONTACT -->
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
+                        <a class="nav-link <?php echo setActivePage(['contact.php']) ?>" href="contact.php">Contact</a>
                     </li>
 
                 </ul>
@@ -80,17 +85,20 @@ $servicesList = $service->getServices();
             <nav class="side-nav w-100">
                 <ul class="navbar-nav">
 
+                    <!-- HOME -->
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link <?php echo setActivePage(['index.php']) ?>" href="index.php">Home</a>
                     </li>
 
+                    <!-- ABOUT -->
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
+                        <a class="nav-link <?php echo setActivePage(['about.php']) ?>" href="about.php">About</a>
                     </li>
 
-                    <!-- SERVICES (SIDE MENU - DYNAMIC) -->
+                    <!-- SERVICES -->
                     <li class="nav-item">
-                        <a class="nav-link collapsePagesSideMenu" data-bs-toggle="collapse" href="#sideServices">
+                        <a class="nav-link collapsePagesSideMenu <?php echo setActivePage(['services.php', 'service-details.php']) ?>"
+                           data-bs-toggle="collapse" href="#sideServices">
                             Services <i class="fas fa-chevron-down"></i>
                         </a>
 
@@ -98,27 +106,29 @@ $servicesList = $service->getServices();
                             <ul class="navbar-nav mt-2">
 
                                 <?php
-                                if (!empty($servicesList)) {
-                                    foreach ($servicesList as $srv) {
-                                        if ($srv['status'] == 'active') {
-                                ?>
+                                    if (! empty($servicesList)) {
+                                        foreach ($servicesList as $srv) {
+                                            if ($srv['status'] == 'active') {
+                                            ?>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="service-details.php?slug=<?= $srv['slug'] ?>">
-                                                    <?= $srv['service_name'] ?>
+                                                <a class="nav-link"
+                                                   href="service-details.php?slug=<?php echo $srv['slug'] ?>">
+                                                    <?php echo $srv['service_name'] ?>
                                                 </a>
                                             </li>
                                 <?php
+                                    }
                                         }
                                     }
-                                }
                                 ?>
 
                             </ul>
                         </div>
                     </li>
 
+                    <!-- CONTACT -->
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact</a>
+                        <a class="nav-link <?php echo setActivePage(['contact.php']) ?>" href="contact.php">Contact</a>
                     </li>
 
                 </ul>
@@ -129,21 +139,21 @@ $servicesList = $service->getServices();
 
                 <ul class="social-icons-simple white top40">
 
-                    <?php if (!empty($display_settings['facebook'])) { ?>
-                        <li><a href="<?= $display_settings['facebook'] ?>"><i class="fab fa-facebook-f"></i></a></li>
-                    <?php } ?>
+                    <?php if (! empty($display_settings['facebook'])) {?>
+                        <li><a href="<?php echo $display_settings['facebook'] ?>"><i class="fab fa-facebook-f"></i></a></li>
+                    <?php }?>
 
-                    <?php if (!empty($display_settings['twitter'])) { ?>
-                        <li><a href="<?= $display_settings['twitter'] ?>"><i class="fab fa-twitter"></i></a></li>
-                    <?php } ?>
+                    <?php if (! empty($display_settings['twitter'])) {?>
+                        <li><a href="<?php echo $display_settings['twitter'] ?>"><i class="fab fa-twitter"></i></a></li>
+                    <?php }?>
 
-                    <?php if (!empty($display_settings['instagram'])) { ?>
-                        <li><a href="<?= $display_settings['instagram'] ?>"><i class="fab fa-instagram"></i></a></li>
-                    <?php } ?>
+                    <?php if (! empty($display_settings['instagram'])) {?>
+                        <li><a href="<?php echo $display_settings['instagram'] ?>"><i class="fab fa-instagram"></i></a></li>
+                    <?php }?>
 
-                    <?php if (!empty($display_settings['linkedIn'])) { ?>
-                        <li><a href="<?= $display_settings['linkedIn'] ?>"><i class="fab fa-linkedin-in"></i></a></li>
-                    <?php } ?>
+                    <?php if (! empty($display_settings['linkedIn'])) {?>
+                        <li><a href="<?php echo $display_settings['linkedIn'] ?>"><i class="fab fa-linkedin-in"></i></a></li>
+                    <?php }?>
 
                 </ul>
 

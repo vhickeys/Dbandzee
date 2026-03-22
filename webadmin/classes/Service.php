@@ -130,7 +130,7 @@ class Service
     }
 
     // ✅ GET ALL SERVICES
-    public function getServices($status='active')
+    public function getServices($status = 'active')
     {
         $sql       = "SELECT * FROM services WHERE status=? ORDER BY created_at DESC";
         $statement = $this->db->prepare($sql);
@@ -145,6 +145,15 @@ class Service
         $statement = $this->db->prepare($sql);
         $statement->execute([$id]);
         return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // ✅ GET SINGLE SERVICE
+    public function getServiceBySlug($slug)
+    {
+        $sql  = "SELECT * FROM services WHERE slug = ? AND status = 'active'";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$slug]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     // ✅ UPDATE STATUS ONLY (Optional but useful)

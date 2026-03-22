@@ -195,13 +195,10 @@ function textToSlug($text)
     return $text;
 }
 
-function setActivePage($currentPage, $linkPage)
+function setActivePage($pages = [])
 {
-    if ($currentPage === $linkPage) {
-        return 'active';
-    } else {
-        return '';
-    }
+    $currentPage = basename($_SERVER['PHP_SELF']);
+    return in_array($currentPage, $pages) ? 'active' : '';
 }
 
 function save_visitors()
@@ -269,11 +266,11 @@ function generateSlug($string)
 function createUniqueSlug($db, $slug)
 {
     $originalSlug = $slug;
-    $count = 1;
+    $count        = 1;
 
     while (true) {
         $query = "SELECT COUNT(*) FROM services WHERE slug = ?";
-        $stmt = $db->prepare($query);
+        $stmt  = $db->prepare($query);
         $stmt->execute([$slug]);
 
         if ($stmt->fetchColumn() == 0) {

@@ -1,9 +1,8 @@
 <?php
-$title = 'Homepage';
-include_once 'components/head.php';
+    $title = 'Homepage';
+    include_once 'components/head.php';
+    include_once 'components/header.php';
 ?>
-
-<?php include_once 'components/header.php'; ?>
 <!--Main Slider-->
 <section id="main-banner-area" class="position-relative">
   <div
@@ -305,48 +304,35 @@ include_once 'components/head.php';
       </ul>
     </div>
   </div>
-  <ul class="social-icons-simple revicon white">
-    <li class="d-table">
-      <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
-    </li>
-    <li class="d-table">
-      <a href="javascript:void(0)"><i class="fab fa-twitter"></i> </a>
-    </li>
-    <li class="d-table">
-      <a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i> </a>
-    </li>
-    <li class="d-table">
-      <a href="javascript:void(0)"><i class="fab fa-instagram"></i> </a>
-    </li>
-  </ul>
+
 </section>
 <!--Main Slider ends -->
 
 <!-- Services -->
 <?php
-$services = $service->getServices('active');
-$count    = 0;
+    $services = $service->getServices('active');
+    $count    = 0;
 
-if (! empty($services)) {
-  foreach ($services as $srv) {
+    if (! empty($services)) {
+    foreach ($services as $srv) {
 
-    // Alternate background
-    $isDark = $count % 2 != 0;
+        // Alternate background
+        $isDark = $count % 2 != 0;
 
-    $sectionClass = $isDark ? "padding bgdark" : "padding";
-    $textClass    = $isDark ? "text-white" : "";
-    $btnClass     = $isDark ? "btnsecondary gradient-btn" : "btnprimary";
+        $sectionClass = $isDark ? "padding bgdark" : "padding";
+        $textClass    = $isDark ? "text-white" : "";
+        $btnClass     = $isDark ? "btnsecondary gradient-btn" : "btnprimary";
 
-    // Optional: alternate animation direction
-    $textAnim = $isDark ? "fadeInRight" : "fadeInLeft";
-    $imgAnim  = $isDark ? "fadeInLeft" : "fadeInRight";
-?>
+        // Optional: alternate animation direction
+        $textAnim = $isDark ? "fadeInRight" : "fadeInLeft";
+        $imgAnim  = $isDark ? "fadeInLeft" : "fadeInRight";
+        ?>
 
     <section class="<?php echo $sectionClass ?>">
       <div class="container">
         <div class="row d-flex align-items-center">
 
-          <?php if ($isDark) { ?>
+          <?php if ($isDark) {?>
             <!-- IMAGE FIRST (for alternating layout) -->
             <div class="col-lg-5 col-md-5 col-sm-5 wow <?php echo $imgAnim ?>" data-wow-delay="300ms">
               <div class="image">
@@ -355,7 +341,7 @@ if (! empty($services)) {
                   src="assets/images/services/<?php echo $srv['image'] ?? 'placeholder.png' ?>">
               </div>
             </div>
-          <?php } ?>
+          <?php }?>
 
           <div class="col-lg-6 col-md-7 col-sm-7 text-sm-start text-center <?php echo $textClass ?> wow <?php echo $textAnim ?>" data-wow-delay="300ms">
             <div class="heading-title mb-4">
@@ -371,12 +357,12 @@ if (! empty($services)) {
             </p>
 
             <a href="service-details.php?slug=<?php echo $srv['slug'] ?>"
-              class="button <?php echo $btnClass ?> pagescroll mb-sm-0 mb-4">
+              class="button <?php echo $btnClass ?> mb-sm-0 mb-4">
               Learn More
             </a>
           </div>
 
-          <?php if (! $isDark) { ?>
+          <?php if (! $isDark) {?>
             <!-- IMAGE AFTER TEXT -->
             <div class="col-lg-5 offset-lg-1 col-md-5 col-sm-5 wow <?php echo $imgAnim ?>" data-wow-delay="300ms">
               <div class="image">
@@ -385,7 +371,7 @@ if (! empty($services)) {
                   src="assets/images/services/<?php echo $srv['image'] ?? 'placeholder.png' ?>">
               </div>
             </div>
-          <?php } ?>
+          <?php }?>
 
         </div>
       </div>
@@ -393,8 +379,8 @@ if (! empty($services)) {
 
 <?php
     $count++;
-  }
-}
+    }
+    }
 ?>
 <!-- Services -->
 
@@ -435,6 +421,6 @@ if (! empty($services)) {
 <!-- Call To Action Ends -->
 
 <?php
-include_once 'components/footer.php';
+    include_once 'components/footer.php';
 include_once 'components/scripts.php';
 ?>
