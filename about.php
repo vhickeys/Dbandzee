@@ -32,7 +32,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 padding_bottom_half">
                 <div class="image">
-                    <img alt="D'bandzee Ltd" src="assets/images/about/company.jpg">
+                    <img alt="D'bandzee Ltd" src="assets/images/about/dbandzee.jpg">
                 </div>
             </div>
 

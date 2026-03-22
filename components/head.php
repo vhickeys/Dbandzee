@@ -1,6 +1,6 @@
 <?php require_once
     'webadmin/classes/functions.php';
-    $display_settings = $settings->getSettings(1, 1);
+$display_settings = $settings->getSettings(1, 1);
 ?>
 
 <!doctype html>
@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="assets/css/revolution/navigation.css" />
     <link rel="stylesheet" href="assets/css/revolution/settings.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/logo/favicon/site.webmanifest">
 </head>
 
 <body>

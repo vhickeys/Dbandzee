@@ -29,7 +29,7 @@
           <!-- MAIN IMAGE -->
           <div class="overlay overlay-dark opacity-5"></div>
           <img
-            src="assets/images/banner6.jpg"
+            src="assets/images/sliders/slider-2.jpg"
             alt=""
             data-bgposition="center center"
             data-bgfit="cover"
@@ -124,7 +124,7 @@
           <!-- MAIN IMAGE -->
           <div class="overlay overlay-dark opacity-4"></div>
           <img
-            src="assets/images/banner8.jpg"
+            src="assets/images/sliders/slider-4.jpg"
             alt=""
             data-bgposition="center center"
             data-bgfit="cover"
@@ -219,7 +219,7 @@
           <!-- MAIN IMAGE -->
           <div class="overlay overlay-dark opacity-5"></div>
           <img
-            src="assets/images/banner7.jpg"
+            src="assets/images/sliders/slider-1.jpg"
             alt=""
             data-bgposition="center center"
             data-bgfit="cover"
@@ -384,18 +384,19 @@
 ?>
 <!-- Services -->
 
-<!-- Call To Action -->
 <section id="cta-contact" class="single-feature padding bgdark">
   <div class="container">
     <div class="row d-flex align-items-center">
 
-      <div class="col-lg-5 offset-lg-1 col-md-5 col-sm-5 wow fadeInRight" data-wow-delay="300ms">
+      <!-- Image Column -->
+      <div class="col-lg-5 col-md-5 col-sm-12 text-start wow fadeInRight" data-wow-delay="300ms">
         <div class="image">
-          <img alt="Contact Dbandzee Ltd" src="images/contact-cta.png">
+          <img alt="Contact Dbandzee Ltd" src="assets/images/about/consultancy.jpg" class="img-fluid">
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-7 col-sm-7 text-sm-start text-center text-white wow fadeInLeft" data-wow-delay="300ms">
+      <!-- Text Column -->
+      <div class="col-lg-6 offset-lg-1 col-md-7 col-sm-12 text-md-end text-center text-white wow fadeInLeft" data-wow-delay="300ms">
         <div class="heading-title mb-4">
           <h2 class="font-normal bottom30">
             Ready to Start Your <span class="defaultcolor">Next Project?</span>
@@ -407,18 +408,17 @@
           Our team is ready to deliver efficient and professional services tailored to your needs.
         </p>
 
-        <a href="contact.php" class="button btnsecondary gradient-btn mb-sm-0 mb-3">
+        <a href="contact.php" class="button btnsecondary gradient-btn mb-3 mb-md-0">
           Request a Quote
         </a>
 
-        <a href="contact.php" class="button btnprimary ms-2">
+        <a href="contact.php" class="button btnprimary ms-0 ms-md-2 mt-2 mt-md-0">
           Contact Us
         </a>
       </div>
     </div>
   </div>
 </section>
-<!-- Call To Action Ends -->
 
 <?php
     include_once 'components/footer.php';
