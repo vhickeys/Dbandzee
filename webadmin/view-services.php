@@ -10,7 +10,7 @@ include_once 'components/nav-header.php';
 include_once 'components/header.php';
 include_once 'components/sidebar.php';
 
-$allServices = $service->getServices();
+$allServices = $service->getAdminServices();
 ?>
 
 <div class="content-body">

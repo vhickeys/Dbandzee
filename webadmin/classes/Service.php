@@ -138,6 +138,14 @@ class Service
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getAdminServices()
+    {
+        $sql       = "SELECT * FROM services ORDER BY created_at DESC";
+        $statement = $this->db->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // ✅ GET SINGLE SERVICE
     public function getServiceById($id)
     {
