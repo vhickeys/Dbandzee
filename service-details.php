@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <h2 class="darkcolor bottom30"><?php echo $singleService ['service_name'] ?? 'Service' ?></h2>
-                <p class="bottom35"><?php echo $singleService ['description'] ?? 'No description available.' ?></p>
+                <p class="bottom35" style="text-align: justify !important;"><?php echo $singleService ['description'] ?? 'No description available.' ?></p>
             </div>
         </div>
         <!-- Optional: Related services or CTA -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2026 at 10:46 PM
+-- Generation Time: Mar 23, 2026 at 02:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,36 +37,6 @@ CREATE TABLE `contacts` (
   `message` longtext DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `phone`, `subject`, `message`, `date`) VALUES
-(1, 'Victor', 'Osaronwafor', 'victorosaronwafor@gmail.com', '08188059316', 'Urgent Assistance Needed', 'Hiiiiii', '2025-10-23 02:07:23'),
-(2, 'Victor', 'Osaronwafor', 'victorosaronwafor@gmail.com', '08188059316', 'Contract Request', 'Contract Request', '2026-03-22 22:42:58');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `requests`
---
-
-CREATE TABLE `requests` (
-  `id` int(11) NOT NULL,
-  `beneficiary_id` int(11) NOT NULL,
-  `donation_id` int(11) NOT NULL,
-  `purpose` text NOT NULL,
-  `status` tinyint(1) DEFAULT 0 COMMENT '0 = Pending, 1 = Approved, 2 = Rejected, 3 = Matched',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `requests`
---
-
-INSERT INTO `requests` (`id`, `beneficiary_id`, `donation_id`, `purpose`, `status`, `created_at`) VALUES
-(1, 3, 3, 'For secondary schools ict empowerment', 3, '2025-10-22 20:32:08');
 
 -- --------------------------------------------------------
 
@@ -128,7 +98,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `discount_offer`, `about`, `phone`, `email`, `office_address`, `error_message`, `payment_notice`, `facebook`, `instagram`, `twitter`, `linkedIn`, `youtube`, `whatsapp`, `whatsapp_group`, `logo`, `status`, `date`) VALUES
-(1, '', '', '', '', '\r\n\r\n\r\n', '', '', '', '', '', '', 'youtube.com', '', '', '1727805040.png', 0, '2024-02-23 18:26:51');
+(1, '', 'D\'bandzee Ltd is a multidisciplinary company providing services in dredging, construction, mining, security services, consultancy, and general merchandise. The company supports infrastructure development, resource extraction, and industrial operations through professional project delivery and reliable supply solutions.', '08188059316', 'info@dbandzee.com', 'F.C.T Abuja', '', '', '', '', '', '', 'youtube.com', '', '', '1774218374.jpg', 1, '2024-02-23 18:26:51');
 
 -- --------------------------------------------------------
 
@@ -174,18 +144,10 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`id`, `ip_address`, `page_url`, `date`) VALUES
-(1, '::1', 'http://localhost/ReTech-9ja/webadmin/index.php', '2025-10-23 01:25:20'),
-(2, '::1', 'http://localhost/ReTech-9ja/webadmin/view-visitors.php', '2025-10-23 01:25:35'),
-(3, '::1', 'http://localhost/ReTech-9ja/index.php', '2025-10-23 01:27:40'),
-(4, '::1', 'http://localhost/ReTech-9ja/login.php', '2025-10-23 01:30:30'),
-(5, '::1', 'http://localhost/ReTech-9ja/register.php', '2025-10-23 01:36:50'),
-(6, '::1', 'http://localhost/ReTech-9ja/webadmin/view-requests.php', '2025-10-23 01:37:28'),
-(7, '::1', 'http://localhost/ReTech-9ja/about.php', '2025-10-23 01:42:54'),
-(8, '::1', 'http://localhost/ReTech-9ja/contact.php', '2025-10-23 01:50:39'),
-(9, '::1', 'http://localhost/ReTech-9ja/request-donation.php?donation_id=3', '2025-10-24 08:56:50'),
-(10, '::1', 'http://localhost/ReTech-9ja/webadmin/donor-view-requests.php', '2025-10-24 09:29:24'),
-(11, '::1', 'http://localhost/ReTech-9ja/request-donation.php?donation_id=', '2025-10-24 09:31:30'),
-(12, '::1', 'http://localhost/dbandzee/webadmin/login.php', '2026-03-21 21:50:35');
+(1, '::1', 'http://localhost/dbandzee/contact.php', '2026-03-23 01:08:31'),
+(2, '::1', 'http://localhost/dbandzee/index.php', '2026-03-23 01:18:22'),
+(3, '::1', 'http://localhost/dbandzee/service-details.php?slug=general-merchandise-procurement', '2026-03-23 01:37:41'),
+(4, '::1', 'http://localhost/dbandzee/about.php', '2026-03-23 01:37:58');
 
 --
 -- Indexes for dumped tables
@@ -196,13 +158,6 @@ INSERT INTO `visitors` (`id`, `ip_address`, `page_url`, `date`) VALUES
 --
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `requests`
---
-ALTER TABLE `requests`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `beneficiary_id` (`beneficiary_id`);
 
 --
 -- Indexes for table `services`
@@ -236,13 +191,7 @@ ALTER TABLE `visitors`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `requests`
---
-ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -266,17 +215,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `requests`
---
-ALTER TABLE `requests`
-  ADD CONSTRAINT `requests_ibfk_1` FOREIGN KEY (`beneficiary_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

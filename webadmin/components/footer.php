@@ -288,7 +288,7 @@
         ***********************************-->
 <div class="footer">
     <div class="copyright">
-        <p>Copyright © ReTech 9ja <?= date("Y") ?></p>
+        <p>Copyright © Dbandzee <?= date("Y") ?></p>
     </div>
 </div>
 <!--**********************************

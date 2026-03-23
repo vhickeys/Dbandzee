@@ -1,6 +1,7 @@
 <?php require_once
     'webadmin/classes/functions.php';
-$display_settings = $settings->getSettings(1, 1);
+    $display_settings = $settings->getSettings(1, 1);
+    save_visitors();
 ?>
 
 <!doctype html>

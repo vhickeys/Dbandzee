@@ -10,9 +10,9 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="ReTech Nigeria">
-    <meta property="og:title" content="ReTech Nigeria">
-    <meta property="og:description" content="ReTech Nigeria">
+    <meta name="description" content="Dbandzee LTD.">
+    <meta property="og:title" content="Dbandzee LTD.">
+    <meta property="og:description" content="Dbandzee LTD.">
     <meta property="og:image" content="social-image.png">
     <meta name="format-detection" content="telephone=no">
 
@@ -23,7 +23,7 @@
     <link rel="manifest" href="images/favicon/site.webmanifest"> -->
 
     <!-- PAGE TITLE HERE -->
-    <title><?php echo $title ?? "ReTech Nigeria" ?> | ReTech Nigeria</title>
+    <title><?php echo $title ?? "Dbandzee LTD" ?> | Dbandzee LTD.</title>
 
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
@@ -35,9 +35,13 @@
     <link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
-
-
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/logo/favicon/site.webmanifest">
     <!-- Clock Picker -->
+
     <!-- Daterange picker -->
     <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Clockpicker -->

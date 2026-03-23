@@ -107,7 +107,7 @@
             data-start="2000"
             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
             <h4 class="whitecolor font-xlight text-center">
-              We deliver reliable engineering, dredging, and infrastructure solutions.
+              We deliver reliable infrastructure solutions.
             </h4>
           </div>
         </li>
@@ -202,7 +202,7 @@
             data-start="2000"
             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
             <h4 class="whitecolor font-xlight text-center">
-              We provide efficient and sustainable solutions for mining and industrial operations.
+              We provide sustainable solutions for mining and industrial operations.
             </h4>
           </div>
         </li>
@@ -334,7 +334,7 @@
 
           <?php if ($isDark) {?>
             <!-- IMAGE FIRST (for alternating layout) -->
-            <div class="col-lg-5 col-md-5 col-sm-5 wow <?php echo $imgAnim ?>" data-wow-delay="300ms">
+            <div class="col-lg-5 col-md-5 col-sm-5 mb-4 mb-lg-0 wow <?php echo $imgAnim ?>" data-wow-delay="300ms">
               <div class="image">
                 <img
                   alt="<?php echo $srv['service_name'] ?>"
@@ -343,16 +343,16 @@
             </div>
           <?php }?>
 
-          <div class="col-lg-6 col-md-7 col-sm-7 text-sm-start text-center <?php echo $textClass ?> wow <?php echo $textAnim ?>" data-wow-delay="300ms">
+          <div class="col-lg-6 col-md-7 col-sm-7 <?php echo $textClass ?> wow <?php echo $textAnim ?>" data-wow-delay="300ms">
             <div class="heading-title mb-4">
               <h2 class="font-normal bottom30">
                 <?php echo $srv['service_name'] ?>
               </h2>
             </div>
 
-            <p class="bottom20"><?php echo $srv['caption'] ?></p>
+            <p class="bottom20" style="text-align: justify !important;"><?php echo $srv['caption'] ?></p>
 
-            <p class="bottom35">
+            <p class="bottom35" style="text-align: justify !important;">
               <?php echo substr($srv['description'], 0, 180) ?>...
             </p>
 
@@ -364,7 +364,7 @@
 
           <?php if (! $isDark) {?>
             <!-- IMAGE AFTER TEXT -->
-            <div class="col-lg-5 offset-lg-1 col-md-5 col-sm-5 wow <?php echo $imgAnim ?>" data-wow-delay="300ms">
+            <div class="col-lg-5 offset-lg-1 col-md-5 col-sm-5 mt-4 mt-lg-0 wow <?php echo $imgAnim ?>" data-wow-delay="300ms">
               <div class="image">
                 <img
                   alt="<?php echo $srv['service_name'] ?>"
@@ -396,14 +396,14 @@
       </div>
 
       <!-- Text Column -->
-      <div class="col-lg-6 offset-lg-1 col-md-7 col-sm-12 text-md-end text-center text-white wow fadeInLeft" data-wow-delay="300ms">
+      <div class="col-lg-6 offset-lg-1 col-md-7 col-sm-12 pt-5 pt-sm-0 text-start text-white wow fadeInLeft" data-wow-delay="300ms">
         <div class="heading-title mb-4">
           <h2 class="font-normal bottom30">
             Ready to Start Your <span class="defaultcolor">Next Project?</span>
           </h2>
         </div>
 
-        <p class="bottom35">
+        <p class="bottom35" style="text-align: justify !important;">
           Partner with D'bandzee Ltd for reliable engineering, infrastructure, mining, and procurement solutions.
           Our team is ready to deliver efficient and professional services tailored to your needs.
         </p>

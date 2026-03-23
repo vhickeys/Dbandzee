@@ -436,3 +436,14 @@ function paginationLinks($currentPage, $totalPages)
 
     echo $output;
 }
+
+function countTable($table)
+{
+    global $database;
+    $sql = "SELECT COUNT(*) as total FROM {$table}";
+    $stmt = $database->getConnection()->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['total'] ?? 0;
+}

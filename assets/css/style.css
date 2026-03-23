@@ -1863,7 +1863,7 @@ ul.links li a::before,
 .navbar-brand {
     margin: 16px 0;
     padding: 0;
-    width: 90px;
+    width: 50px;
     position: relative;
 }
 
@@ -6321,7 +6321,7 @@ ul.count_down.white li p:nth-child(2) {
 /*----- Footer -----*/
 
 .footer_logo {
-    width: 90px;
+    width: 50px;
 }
 
 .footer_logo,

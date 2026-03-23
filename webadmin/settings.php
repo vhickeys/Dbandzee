@@ -10,7 +10,7 @@ include_once('components/nav-header.php');
 include_once('components/header.php');
 include_once('components/sidebar.php');
 
-$webSetting = $settings->getSettings('1', '0');
+$webSetting = $settings->getSettings('1', '1');
 ?>
 
 <!--**********************************
@@ -252,7 +252,7 @@ $webSetting = $settings->getSettings('1', '0');
                                                 thereby disabling all web settings on the website, kindly contact the
                                                 Admin to unhide.</small></p>
 
-                                        <input <?= $webSetting['status'] == 1 ? 'checked' : '' ?>
+                                        <input <?= $webSetting['status'] == 0 ? 'checked' : '' ?>
                                             class="form-check-input" name="status" type="checkbox">
                                         <label class="form-check-label">
                                             Hidden

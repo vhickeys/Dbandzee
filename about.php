@@ -6,7 +6,8 @@
 <?php include_once 'components/header.php'; ?>
 
 <!-- PAGE HEADER -->
-<section id="main-banner-page" class="position-relative page-header about-header parallax section-nav-smooth">
+<section id="main-banner-page" class="position-relative page-header about-header parallax section-nav-smooth"
+    style="background-image: url('assets/images/about/about.jpg'); background-size: cover; background-position: center;">
     <div class="overlay overlay-dark opacity-7"></div>
     <div class="container">
         <div class="row" style="padding-top: 7rem !important;">
@@ -36,18 +37,18 @@
                 </div>
             </div>
 
-            <div class="col-lg-5 offset-lg-1 col-md-6 padding_bottom_half text-center text-md-start">
+            <div class="col-lg-5 offset-lg-1 col-md-6 padding_bottom_half">
                 <h2 class="darkcolor font-normal bottom30">
                     Who We Are
                 </h2>
 
-                <p class="bottom35">
+                <p class="bottom35" style="text-align: justify !important;">
                     D'bandzee Ltd is a multidisciplinary service and contracting company delivering
                     professional solutions across engineering, dredging, mining, security services,
                     consultancy, and procurement.
                 </p>
 
-                <p class="bottom35">
+                <p class="bottom35" style="text-align: justify !important;">
                     We support infrastructure development, industrial operations, and resource
                     management through efficient project execution, technical expertise, and
                     reliable service delivery tailored to both government and private sector clients.
@@ -62,17 +63,17 @@
 
         <!-- ROW 2 -->
         <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 padding_top_half text-center text-md-start">
+            <div class="col-lg-5 col-md-6 padding_top_half">
                 <h2 class="darkcolor font-normal bottom30">
                     Our Strength & Capabilities
                 </h2>
 
-                <p class="bottom35">
+                <p class="bottom35" style="text-align: justify !important;">
                     With expertise across multiple industries, D'bandzee Ltd combines technical
                     knowledge, operational efficiency, and strategic execution to deliver high-quality results.
                 </p>
 
-                <p class="bottom35">
+                <p class="bottom35" style="text-align: justify !important;">
                     From large-scale infrastructure projects to resource extraction and industrial
                     support services, we are committed to delivering value, safety, and long-term impact.
                 </p>
