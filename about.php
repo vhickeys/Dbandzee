@@ -43,15 +43,7 @@
                 </h2>
 
                 <p class="bottom35" style="text-align: justify !important;">
-                    D'bandzee Ltd is a multidisciplinary service and contracting company delivering
-                    professional solutions across engineering, dredging, mining, security services,
-                    consultancy, and procurement.
-                </p>
-
-                <p class="bottom35" style="text-align: justify !important;">
-                    We support infrastructure development, industrial operations, and resource
-                    management through efficient project execution, technical expertise, and
-                    reliable service delivery tailored to both government and private sector clients.
+                    <?php echo $display_settings['about'] ?? "D'bandzee Ltd delivers reliable solutions across engineering, dredging, mining, security, consultancy, and procurement." ?>
                 </p>
 
                 <a href="contact.php" class="button btnsecondary gradient-btn">
@@ -61,63 +53,53 @@
         </div>
 
 
-        <!-- ROW 2 -->
-        <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 padding_top_half">
-                <h2 class="darkcolor font-normal bottom30">
-                    Our Strength & Capabilities
-                </h2>
+<!-- ROW 2 -->
+<div class="row align-items-center">
 
-                <p class="bottom35" style="text-align: justify !important;">
-                    With expertise across multiple industries, D'bandzee Ltd combines technical
-                    knowledge, operational efficiency, and strategic execution to deliver high-quality results.
-                </p>
+    <!-- TEXT SIDE -->
+    <div class="col-lg-5 col-md-6 padding_top_half">
+        <h2 class="darkcolor font-normal bottom30">
+            Our Strength & Capabilities
+        </h2>
 
-                <p class="bottom35" style="text-align: justify !important;">
-                    From large-scale infrastructure projects to resource extraction and industrial
-                    support services, we are committed to delivering value, safety, and long-term impact.
-                </p>
-            </div>
+        <p class="bottom35 text-justify">
+            With expertise across multiple industries, D'bandzee Ltd combines technical
+            knowledge, operational efficiency, and strategic execution to deliver high-quality results.
+        </p>
 
-            <div class="col-lg-6 offset-lg-1 col-md-6 padding_top_half">
+        <p class="bottom35 text-justify">
+            From large-scale infrastructure projects to resource extraction and industrial
+            support services, we are committed to delivering value, safety, and long-term impact.
+        </p>
+    </div>
 
-                <!-- REPLACED PROGRESS BARS WITH COMPANY STRENGTHS -->
-                <div class="row text-center">
+    <!-- DYNAMIC SERVICES -->
+    <div class="col-lg-6 offset-lg-1 col-md-6 padding_top_half">
+        <div class="row text-start">
 
-                    <div class="col-6 mb-4">
-                        <h3 class="defaultcolor">✔</h3>
-                        <p>Engineering & Infrastructure</p>
-                    </div>
+            <?php
+                $services = $service->getServices('active');
 
-                    <div class="col-6 mb-4">
-                        <h3 class="defaultcolor">✔</h3>
-                        <p>Dredging & Marine Operations</p>
-                    </div>
-
-                    <div class="col-6 mb-4">
-                        <h3 class="defaultcolor">✔</h3>
-                        <p>Mining & Resource Extraction</p>
-                    </div>
-
-                    <div class="col-6 mb-4">
-                        <h3 class="defaultcolor">✔</h3>
-                        <p>Security & Industrial Protection</p>
-                    </div>
-
-                    <div class="col-6 mb-4">
-                        <h3 class="defaultcolor">✔</h3>
-                        <p>Consultancy & Project Management</p>
-                    </div>
-
-                    <div class="col-6 mb-4">
-                        <h3 class="defaultcolor">✔</h3>
-                        <p>Procurement & Supply Chain</p>
-                    </div>
-
+                if (! empty($services)) {
+                    foreach ($services as $srv) {
+                    ?>
+                <div class="col-6 mb-4 d-flex align-items-start">
+                    <span class="defaultcolor me-2" style="font-size: 18px;">✔</span>
+                    <p class="mb-0">
+                        <?php echo $srv['service_name']; ?>
+                    </p>
                 </div>
+            <?php
+                }
+                } else {
+                    echo '<p>No services available</p>';
+                }
+            ?>
 
-            </div>
         </div>
+    </div>
+
+</div>
 
     </div>
 </section>

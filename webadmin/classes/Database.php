@@ -2,19 +2,19 @@
 
 class Database
 {
-    // private $hostname = "localhost";
-    // private $username = "root";
-    // private $password = "";
-    // private $dbname = "dbandzee";
-    // private $conn;
+    private $hostname = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $dbname = "dbandzee";
+    private $conn;
 
     // Uncomment this for Live Connection
 
-    private $hostname = "localhost";
-    private $username = "dbanjdci_user";
-    private $password = "Dbandzee@2026";
-    private $dbname = "dbanjdci_db";
-    private $conn;
+    // private $hostname = "localhost";
+    // private $username = "dbanjdci_user";
+    // private $password = "Dbandzee@2026";
+    // private $dbname = "dbanjdci_db";
+    // private $conn;
 
     // Uncomment this for Free Hosting
 
